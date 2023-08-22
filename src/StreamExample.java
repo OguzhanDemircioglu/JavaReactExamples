@@ -24,6 +24,10 @@ public class StreamExample {
         getBiggestAgeOfCompany(persons);
 
         List<Integer> intArr = new ArrayList<>();
+        for (int i = 0; i <10 ; i++) {
+            intArr.add(i);
+        }
+
         System.out.println("\n" + sumTheArray(intArr));
 
         System.out.println("\n" +getPeoplesAgeBiggerThan18byTheirNames(persons));
@@ -32,6 +36,9 @@ public class StreamExample {
 
         System.out.println("\n" + getNamesWithCommaFinishWithDot(persons));
 
+        System.out.println("\n" +getOBeforeOddsgetEBeforeEvens(intArr) +"\n");
+
+        foreachUsage(persons);
     }
 
     private static List<Person> getPeople() {
@@ -102,9 +109,6 @@ public class StreamExample {
     }
 
     public static int sumTheArray(List<Integer> arr){
-        for (int i = 0; i <10 ; i++) {
-            arr.add(i);
-        }
         return arr.stream().reduce(Integer::sum).orElseThrow(NullPointerException::new);
     }
 
@@ -135,7 +139,27 @@ public class StreamExample {
                 arr.stream().map(Person::getName).collect(Collectors.joining(","))+ "."
         );
 
-        return "Names : "+arr.stream().map(Person::getName).reduce((i,sum) -> i + ", " +sum).orElse("")+ ".";
+        return "Names : "+arr.stream()
+                .map(Person::getName).
+                    reduce((i,sum) -> i + ", " +sum)
+                        .orElse("")+ ".";
+    }
+
+    public static String getOBeforeOddsgetEBeforeEvens(List<Integer> arr){
+
+        return arr.stream().map(i -> {
+            String s = "";
+            if(i%2==0){
+                s= "e" +i;
+            }else {
+                s = "o" + i;
+            }
+            return s;
+        }).collect(Collectors.joining(","));
+    }
+
+    public static void foreachUsage(List<Person> arr){
+        arr.stream().map(Person::getName).collect(Collectors.toSet()).forEach(System.out::println);
     }
 
 }
