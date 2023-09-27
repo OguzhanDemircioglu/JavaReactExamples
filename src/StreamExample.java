@@ -3,7 +3,7 @@ import java.util.stream.Collectors;
 
 public class StreamExample {
     public static void main(String[] args) {
-
+/*
         List<String> arr = new ArrayList<>();
         arr.add("asasd as");
         arr.add("awd ");
@@ -28,7 +28,7 @@ public class StreamExample {
             intArr.add(i);
         }
 
-        System.out.println("\n" + sumTheArray(intArr));
+       System.out.println("\n" + sumTheArray(intArr));
 
         System.out.println("\n" +getPeoplesAgeBiggerThan18byTheirNames(persons));
 
@@ -38,7 +38,11 @@ public class StreamExample {
 
         System.out.println("\n" +getOBeforeOddsgetEBeforeEvens(intArr) +"\n");
 
-        foreachUsage(persons);
+        foreachUsage(persons);*/
+
+        String reduceID ="update = selfe=000\nselect214";
+        getReduceId(reduceID);
+
     }
 
     private static List<Person> getPeople() {
@@ -160,6 +164,18 @@ public class StreamExample {
 
     public static void foreachUsage(List<Person> arr){
         arr.stream().map(Person::getName).collect(Collectors.toSet()).forEach(System.out::println);
+    }
+
+    public static void getReduceId(String reduceID){
+        System.out.println(
+                Arrays.stream(reduceID.split("=")).map(i -> {
+                    String returnVal ="";
+                    if(i.contains("select")){
+                        returnVal=i.substring(0,i.indexOf("select")-1);
+                    }
+                    return returnVal;
+                }).filter(i->!i.equals("")).findFirst().get()
+        );
     }
 
 }
