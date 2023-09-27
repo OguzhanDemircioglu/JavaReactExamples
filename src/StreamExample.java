@@ -3,7 +3,7 @@ import java.util.stream.Collectors;
 
 public class StreamExample {
     public static void main(String[] args) {
-/*
+
         List<String> arr = new ArrayList<>();
         arr.add("asasd as");
         arr.add("awd ");
@@ -38,7 +38,7 @@ public class StreamExample {
 
         System.out.println("\n" +getOBeforeOddsgetEBeforeEvens(intArr) +"\n");
 
-        foreachUsage(persons);*/
+        foreachUsage(persons);
 
         String reduceID ="update = selfe=000\nselect214";
         getReduceId(reduceID);
