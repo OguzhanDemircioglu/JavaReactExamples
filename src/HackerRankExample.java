@@ -1,5 +1,8 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class HackerRankExample {
@@ -10,12 +13,13 @@ public class HackerRankExample {
         arr.add("uz");
         arr.add("foo");
         arr.add("of");
-        getSamePairs(arr);
+        arr.add("of");
+        getSamePairsNumber(arr);
         palindrom("121xox112");
-
+        getCountValuesOfArrayElements(arr);
     }
 
-    public static void getSamePairs(List<String> words) {
+    public static void getSamePairsNumber(List<String> words) {
 
         words = words.stream()
                 .map(a -> a.chars().distinct()
@@ -34,6 +38,13 @@ public class HackerRankExample {
 
         }
         System.out.println(sum);
+    }
+
+    public static void getCountValuesOfArrayElements(List<String> arr){
+      Map counts = arr.stream().collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+        counts.forEach(
+                (key,value) -> System.out.println(key +" -> "+ value)
+        );
     }
 
     public static void palindrom(String str) {

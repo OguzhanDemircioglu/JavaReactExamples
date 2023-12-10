@@ -4,6 +4,7 @@ import java.util.stream.Collectors;
 public class StreamExample {
     public static void main(String[] args) {
 
+/*
         List<String> arr = new ArrayList<>();
         arr.add("asasd as");
         arr.add("awd ");
@@ -42,6 +43,8 @@ public class StreamExample {
 
         String reduceID ="update = selfe=000\nselect214";
         getReduceId(reduceID);
+*/
+
 
     }
 
@@ -177,5 +180,4 @@ public class StreamExample {
                 }).filter(i->!i.equals("")).findFirst().get()
         );
     }
-
 }
