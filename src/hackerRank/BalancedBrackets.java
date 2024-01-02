@@ -21,7 +21,7 @@ public class BalancedBrackets {
         List<String> arr = new ArrayList<>();
         arr.add("{[()]}");
         arr.add("{[(])}");
-        arr.add("{{[[(())]]}}");
+        arr.add("{{[[(())]]}}-");
         arr.add("{{}}[]");
 
         for (String l: arr){
@@ -32,30 +32,27 @@ public class BalancedBrackets {
 
     static void isBalanced(String str){
 
-        Stack st = new Stack<>();
-
-        for(int i = 0; i < str.length(); i++) {
-
-            if(str.charAt(i) == '{' || str.charAt(i) == '[' || str.charAt(i) == '(') {
-                st.push(str.charAt(i));
-
-            } else if (!st.empty() &&
-                    ((str.charAt(i) == ']' && st.peek().equals('[')) ||
-                    (str.charAt(i) == '}' && st.peek().equals('{')) ||
-                    (str.charAt(i) == ')' && st.peek().equals('(')))) {
-
-                st.pop();
-
-            } else {
-                st.push(str.charAt(i));
+        Stack stack = new Stack<>();
+        for (int i = 0; i < str.length(); i++) {
+            char charVal = str.charAt(i);
+            if(charVal == '(' || charVal == '{' || charVal == '['){
+                stack.push(charVal);
+            }else if(
+                    !stack.isEmpty() &&
+                            ((charVal == ')' && stack.peek().equals('(')) ||
+                                    (charVal == '}' && stack.peek().equals('{')) ||
+                                    (charVal == ']' && stack.peek().equals('[')))
+            ){
+                stack.pop();
+            }else {
+                stack.push(charVal);
             }
         }
 
-        if(st.empty()) {
-            System.out.println("Balanced");
-        } else {
-            System.out.println("Not balanced");
+        if(stack.isEmpty()){
+            System.out.println("BALANCED");
+        }else {
+            System.out.println("NOT BALACED");
         }
-
     }
 }
