@@ -14,7 +14,6 @@ public class SamePairs {
         arr.add("of");
         arr.add("of");
         getSamePairsNumber(arr);
-        palindrom("121xox112");
         getCountValuesOfArrayElements(arr);
     }
 
@@ -44,22 +43,5 @@ public class SamePairs {
         counts.forEach(
                 (key,value) -> System.out.println(key +" -> "+ value)
         );
-    }
-
-    public static void palindrom(String str) {
-
-        boolean returVal = true;
-
-        for (int i=0; i<str.length();i++) {
-            if (str.charAt(i) != str.charAt(str.length() - i - 1)) {
-                returVal = false;
-                break;
-            }
-        }
-        if (returVal){
-            System.out.println("yes");
-        }else {
-            System.out.println("no");
-        }
     }
 }
