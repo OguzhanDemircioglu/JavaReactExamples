@@ -29,7 +29,9 @@ const Header = () => {
                     <NavLink className="nav-link" href="/useState">
                         UseState
                     </NavLink>
-
+                    <NavLink className="nav-link" href="/useMemo">
+                        UseMemo
+                    </NavLink>
                 </Nav>
             </Container>
         </Navbar>

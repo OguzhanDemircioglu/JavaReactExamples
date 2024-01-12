@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {ThemeContext} from "../UseContexExample";
+import {ThemeContext} from "../UseContextExample";
 
 export default class ClassContextComponent extends Component {
     themeStyles(dark) {

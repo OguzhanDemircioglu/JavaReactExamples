@@ -4,7 +4,7 @@ import ClassContextComponent from "./helper/ClassContextComponent";
 
 export const ThemeContext = React.createContext();
 
-export default function UseContexExample() {
+export default function UseContextExample() {
     const [darkTheme, setDarkTheme] = useState(true);
 
     function toggleTheme() {

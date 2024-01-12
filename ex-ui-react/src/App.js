@@ -4,8 +4,9 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import UseRefExample from "./example/UseRefExample";
-import UseContexExample from "./example/UseContexExample";
+import UseContextExample from "./example/UseContextExample";
 import UseStateExample from "./example/UseStateExample";
+import UseMemoExample from "./example/UseMemoExample";
 
 function App() {
   return (
@@ -15,8 +16,9 @@ function App() {
             <Route path="/"           element={<Home />}></Route>
             <Route path="/useEffect"  element={<UseEffectExample />}></Route>
             <Route path="/useRef"     element={<UseRefExample />}></Route>
-            <Route path="/useContext" element={<UseContexExample />}></Route>
-            <Route path="/useState" element={<UseStateExample />}></Route>
+            <Route path="/useContext" element={<UseContextExample />}></Route>
+            <Route path="/useState"   element={<UseStateExample />}></Route>
+            <Route path="/useMemo"    element={<UseMemoExample />}></Route>
 
         </Routes>
     </div>
