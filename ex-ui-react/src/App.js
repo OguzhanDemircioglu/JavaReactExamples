@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import UseRefExample from "./example/UseRefExample";
 import UseContexExample from "./example/UseContexExample";
+import UseStateExample from "./example/UseStateExample";
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
             <Route path="/useEffect"  element={<UseEffectExample />}></Route>
             <Route path="/useRef"     element={<UseRefExample />}></Route>
             <Route path="/useContext" element={<UseContexExample />}></Route>
+            <Route path="/useState" element={<UseStateExample />}></Route>
+
         </Routes>
     </div>
   );

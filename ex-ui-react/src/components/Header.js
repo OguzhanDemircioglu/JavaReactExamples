@@ -26,6 +26,10 @@ const Header = () => {
                     <NavLink className="nav-link" href="/useContext">
                         UseContext
                     </NavLink>
+                    <NavLink className="nav-link" href="/useState">
+                        UseState
+                    </NavLink>
+
                 </Nav>
             </Container>
         </Navbar>
