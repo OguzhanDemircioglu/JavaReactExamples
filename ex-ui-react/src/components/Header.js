@@ -23,6 +23,9 @@ const Header = () => {
                     <NavLink className="nav-link" href="/useRef">
                         UseRef
                     </NavLink>
+                    <NavLink className="nav-link" href="/useContext">
+                        UseContext
+                    </NavLink>
                 </Nav>
             </Container>
         </Navbar>
