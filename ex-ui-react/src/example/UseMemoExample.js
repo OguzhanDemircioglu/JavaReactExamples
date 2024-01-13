@@ -26,6 +26,7 @@ function UseMemoExample() {
         color : dark ? 'white' : 'yellow'
         }
     },[dark]);//return değeri object olduğu için sayfada olan herhangi bir değişim useMemo çalışır
+    //Yukarıdaki themeStyle objesi yorumdan kaldırılıp denenebilir
 
     useEffect(() => {
         console.log("theme Changed");

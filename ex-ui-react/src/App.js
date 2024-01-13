@@ -7,6 +7,7 @@ import UseRefExample from "./example/UseRefExample";
 import UseContextExample from "./example/UseContextExample";
 import UseStateExample from "./example/UseStateExample";
 import UseMemoExample from "./example/UseMemoExample";
+import UseReducerExample from "./example/UseReducerExample";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/useContext" element={<UseContextExample />}></Route>
             <Route path="/useState"   element={<UseStateExample />}></Route>
             <Route path="/useMemo"    element={<UseMemoExample />}></Route>
+            <Route path="/useReducer"    element={<UseReducerExample />}></Route>
 
         </Routes>
     </div>

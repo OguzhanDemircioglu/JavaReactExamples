@@ -1,10 +1,10 @@
 import Navbar from "react-bootstrap/Navbar";
 import React from "react";
-import { Button, Container, Nav, NavLink } from "react-bootstrap";
+import { Container, Nav, NavLink } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faVideoSlash } from "@fortawesome/free-solid-svg-icons/faVideoSlash";
 
-const Header = () => {
+export default function Header() {
     return (
         <Navbar bg="dark" variant="dark" expand="lg">
             <Container fluid>
@@ -32,10 +32,11 @@ const Header = () => {
                     <NavLink className="nav-link" href="/useMemo">
                         UseMemo
                     </NavLink>
+                    <NavLink className="nav-link" href="/useReducer">
+                        UseReducer
+                    </NavLink>
                 </Nav>
             </Container>
         </Navbar>
     );
 };
-
-export default Header;
