@@ -35,6 +35,9 @@ export default function Header() {
                     <NavLink className="nav-link" href="/useReducer">
                         UseReducer
                     </NavLink>
+                    <NavLink className="nav-link" href="/useCallBack">
+                        UseCallBack
+                    </NavLink>
                 </Nav>
             </Container>
         </Navbar>
