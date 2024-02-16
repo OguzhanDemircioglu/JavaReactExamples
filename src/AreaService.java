@@ -9,24 +9,20 @@ public class AreaService {
 
     public static void main(String[] args) throws Exception {
 
-        Shape rect = new Rectang(4, 5);
-        Shape circle = new Circle(3);
-
         List<Object> shapes = new ArrayList<>();
-        shapes.add(rect);
-        shapes.add(circle);
+        shapes.add(new Rectang(4, 5));
+        shapes.add(new Circle(3));
+        shapes.add(new Person());
 
-        try {
-            double sum = 0;
-            for (Object s : shapes) {
-                if (s instanceof Shape) {
-                    sum += ((Shape) s).area();
-                }
+        double sum = 0;
+        for (Object s : shapes) {
+            if (s instanceof Shape) {
+                sum += ((Shape) s).area();
+            } else {
+                throw new RuntimeException("Şekil Tanımsız");
             }
-            System.out.println(sum);
-        } catch (Exception e) {
-            throw new Exception("Şekil Tanımsız");
         }
+        System.out.println(sum);
 
         System.out.println(
                 calculateArea(shapes)
