@@ -1,3 +1,12 @@
+
+libs
+
+npm i react-data-table-component
+npm install react-data-table-component styled-components
+npm install @mui/material @emotion/react @emotion/styled
+npm install @mui/icons-material
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

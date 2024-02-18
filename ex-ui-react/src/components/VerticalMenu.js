@@ -9,8 +9,8 @@ const VerticalMenu = () => {
         <div className="side-nav">
             <Container>
                 <Nav>
-                    <NavLink className="nav-link" style={{color: "darkslategray", fontSize: "20px"}} to={"/teacher"}>
-                        Teachers
+                    <NavLink className="nav-link" style={{color: "darkslategray", fontSize: "20px"}} to={"/dataTableEx"}>
+                        DataTableEx
                     </NavLink>
                 </Nav>
 

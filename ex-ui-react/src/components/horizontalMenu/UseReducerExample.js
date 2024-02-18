@@ -1,5 +1,5 @@
 import React, {useReducer, useState} from 'react';
-import Todo from "./helper/Todo";
+import Todo from "../helper/Todo";
 
 export default function UseReducerExample() {
 

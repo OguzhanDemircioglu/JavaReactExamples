@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faVideoSlash } from "@fortawesome/free-solid-svg-icons/faVideoSlash";
 import "../App.css";
 
-export default function Header() {
+export default function HorizontalMenu() {
     return (
         <Navbar bg="dark" variant="dark" expand="lg">
             <Container fluid>

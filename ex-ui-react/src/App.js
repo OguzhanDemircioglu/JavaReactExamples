@@ -1,22 +1,24 @@
 import './App.css';
-import UseEffectExample from "./example/UseEffectExample";
+import UseEffectExample from "./components/horizontalMenu/UseEffectExample";
 import { Routes, Route } from "react-router-dom";
-import Header from "./components/Header";
+import HorizontalMenu from "./components/HorizontalMenu";
 import Home from "./components/Home";
-import UseRefExample from "./example/UseRefExample";
-import UseContextExample from "./example/UseContextExample";
-import UseStateExample from "./example/UseStateExample";
-import UseMemoExample from "./example/UseMemoExample";
-import UseReducerExample from "./example/UseReducerExample";
-import UseCallBackExample from "./example/UseCallBackExample";
+import UseRefExample from "./components/horizontalMenu/UseRefExample";
+import UseContextExample from "./components/horizontalMenu/UseContextExample";
+import UseStateExample from "./components/horizontalMenu/UseStateExample";
+import UseMemoExample from "./components/horizontalMenu/UseMemoExample";
+import UseReducerExample from "./components/horizontalMenu/UseReducerExample";
+import UseCallBackExample from "./components/horizontalMenu/UseCallBackExample";
 import VerticalMenu from "./components/VerticalMenu";
+import DataTableEx from "./components/verticalMenu/DataTableEx";
 
 function App() {
   return (
     <div className="App">
-        <Header />
+        <HorizontalMenu/>
         <VerticalMenu/>
         <Routes>
+            {/*HorizontalMenu*/}
             <Route path="/"             element={<Home />}></Route>
             <Route path="/useEffect"    element={<UseEffectExample />}></Route>
             <Route path="/useRef"       element={<UseRefExample />}></Route>
@@ -25,7 +27,8 @@ function App() {
             <Route path="/useMemo"      element={<UseMemoExample />}></Route>
             <Route path="/useReducer"   element={<UseReducerExample />}></Route>
             <Route path="/useCallBack"  element={<UseCallBackExample />}></Route>
-            <Route path="/teacher"  element={<Home />}></Route>
+            {/*VerticalMenu*/}
+            <Route path="/dataTableEx"  element={<DataTableEx />}></Route>
 
         </Routes>
     </div>

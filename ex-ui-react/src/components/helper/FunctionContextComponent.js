@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import {ThemeContext} from "../UseContextExample";
+import {ThemeContext} from "../horizontalMenu/UseContextExample";
 
 export default function FunctionContextComponent() {
     const darkTheme = useContext(ThemeContext);
