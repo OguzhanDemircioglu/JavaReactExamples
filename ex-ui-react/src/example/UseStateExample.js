@@ -18,10 +18,10 @@ export default function UseStateExample() {
     }
 
     return (
-        <>
+        <div className="example">
             <button onClick={decreaseCount} style={{width:50, marginTop:50, marginLeft:50,border:"none",outline:"none",backgroundColor:previousColor}}>-</button>
             <span>  {count} -  {color}  </span>
             <button onClick={increaseCount} style={{width:50,border:"none",outline:"none",backgroundColor:color}}>+</button>
-        </>
+        </div>
     );
 }

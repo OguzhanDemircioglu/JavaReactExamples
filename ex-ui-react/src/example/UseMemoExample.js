@@ -33,11 +33,11 @@ function UseMemoExample() {
     }, [themeStyle]);
 
     return (
-        <>
+        <div className="example">
         <input type="number" value={count} onChange={e => setCount(Number(e.target.value))}/>
             <button style={themeStyle} onClick={() => setDark(darkVal => !darkVal)}> Change Theme</button>
         <div>{count} * 2 = {countMemo}</div>
-        </>
+        </div>
     );
 }
 

@@ -3,6 +3,7 @@ import React from "react";
 import { Container, Nav, NavLink } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faVideoSlash } from "@fortawesome/free-solid-svg-icons/faVideoSlash";
+import "../App.css";
 
 export default function Header() {
     return (
@@ -14,8 +15,6 @@ export default function Header() {
                 </Navbar.Brand>
                 <Nav
                     className="me-auto my-2 my-lg-0"
-                    style={{ maxHeight: "100px" }}
-                    id="navbarScroll"
                 >
                     <NavLink className="nav-link" href="/useEffect">
                         UseEffect

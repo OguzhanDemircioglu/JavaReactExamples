@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import "../App.css";
 
 export default function UseEffectExample() {
     const [resourceType, setResourceType] = useState('posts');
@@ -24,7 +25,7 @@ export default function UseEffectExample() {
     }, [resourceType]);
 
     return (
-        <div>
+        <div className="example">
             <div>
                 <button onClick={() => setResourceType('posts')}>Posts</button>
                 <button onClick={() => setResourceType('users')}>Users</button>

@@ -1,4 +1,5 @@
 import React, {useCallback, useState} from 'react';
+import "../App.css";
 
 export default function UseCallBackExample() {
     const [number, setNumber] = useState(0);
@@ -7,7 +8,7 @@ export default function UseCallBackExample() {
         return [number+e+1, number+e+2, number+e+3];
     }, [number]);
     return (
-        <div>
+        <div className="example">
             <input value={number} type="number" onChange={e => setNumber(Number(e.target.value))} />
             {
                 getList(number).map((e, index) => (

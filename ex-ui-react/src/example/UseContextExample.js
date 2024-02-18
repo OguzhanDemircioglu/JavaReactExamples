@@ -12,12 +12,12 @@ export default function UseContextExample() {
     }
 
     return (
-        <>
+        <div className="example">
             <ThemeContext.Provider value={darkTheme}>
                 <button onClick={toggleTheme}>Toggle Theme</button>
                 <FunctionContextComponent/>
                 <ClassContextComponent/>
             </ThemeContext.Provider>
-        </>
+        </div>
     );
 }

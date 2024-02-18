@@ -58,7 +58,7 @@ export default function UseReducerExample() {
         return {id: Date.now(), name: name, complete: false}
     }
 
-    return (<>
+    return (<div className="example">
             <button onClick={decreaseCount}
                     style={{width: 50, marginTop: 50, marginLeft: 50, border: "none", outline: "none"}}>-
             </button>
@@ -73,5 +73,5 @@ export default function UseReducerExample() {
                     <Todo key={todo.id} todo={todo} dispatch={dispatchTodo}/>
                 </div>
             })}
-        </>);
+        </div>);
 }
