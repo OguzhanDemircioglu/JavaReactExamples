@@ -55,3 +55,22 @@
   margin-left: 200px;
   margin-top: 30px;
 }
+
+#navigation {
+  margin-bottom: 2rem;
+}
+
+#navigation button {
+  margin-right: 1rem;
+  background-color: greenyellow;
+}
+
+#slide {
+  border: 1px solid #eee;
+  padding: 1rem;
+  min-height: 300px;
+}
+
+button {
+  min-width: 80px;
+}

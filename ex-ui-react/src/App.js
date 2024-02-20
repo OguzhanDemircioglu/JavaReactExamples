@@ -11,6 +11,7 @@ import UseReducerExample from "./components/horizontalMenu/UseReducerExample";
 import UseCallBackExample from "./components/horizontalMenu/UseCallBackExample";
 import VerticalMenu from "./components/VerticalMenu";
 import DataTableEx from "./components/verticalMenu/DataTableEx";
+import Slides from "./components/verticalMenu/Slides";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path="/useCallBack"  element={<UseCallBackExample />}></Route>
             {/*VerticalMenu*/}
             <Route path="/dataTableEx"  element={<DataTableEx />}></Route>
+            <Route path="/slides"  element={<Slides />}></Route>
 
         </Routes>
     </div>
