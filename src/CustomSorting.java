@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class CustomSorting {
@@ -14,6 +15,12 @@ public class CustomSorting {
         for (Person p : li) {
             System.out.println(p.toString());
         }
+
+        System.out.println();
+
+        li.stream()
+                .sorted(Comparator.comparingInt(Person::getAge))
+                .forEach(System.out::println);
     }
 
     public static class Person implements Comparable<Person> {
