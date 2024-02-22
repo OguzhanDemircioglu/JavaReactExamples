@@ -10,7 +10,9 @@ export default function HorizontalMenu() {
         <div className="horizontalMenu">
             <Navbar bg="dark" variant="dark">
                 <Container fluid>
-                    <Navbar.Brand href="/" style={{color: "gold",width: "165px",marginLeft:"30px"}}>
+                    <Navbar.Brand href="/"
+                            style={{color: "gold"
+                                ,marginLeft:"30px",marginRight:"60px"}}>
                         <FontAwesomeIcon icon={faVideoSlash}/>
                         Dear Vault
                     </Navbar.Brand>
