@@ -41,19 +41,27 @@
   }
 }
 
-.side-nav {
-  width: 180px;
-  position: absolute;
+.verticalMenu {
+  width: 200px;
+  position: fixed;
   background-color: lightgray;
-  height: 95vh;
   transition: all 1s;
-  padding-top: 20px;
-  margin-bottom: 240px;
+  bottom: 0;
+  height: 94%;
+  padding-top: 15px;
+}
+
+.horizontalMenu {
+  position: fixed;
+  top: 0;
+  width: max-content;
+  height: 10px;
 }
 
 .example {
-  margin-left: 200px;
-  margin-top: 30px;
+  margin-left: 230px;
+  margin-top: 60px;
+  padding-top: 20px;
 }
 
 #navigation {

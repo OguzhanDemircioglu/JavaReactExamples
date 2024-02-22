@@ -3,16 +3,10 @@ import DataTable, {Alignment, createTheme, Direction, Media} from 'react-data-ta
 import {Button, Input} from "@mui/material";
 import {Persons} from "../helper/Persons";
 import {ArrowDownward} from "@mui/icons-material";
-import * as XLSX from 'xlsx';
 
 function DataTableEx() {
 
     const [items, setItems] = useState(Persons);
-
-    const justArray = [
-        ["takım","score","score","takım"],
-        ["TS","1","0","GS"]
-    ];
 
     const simpleColumns = [
         {
@@ -157,19 +151,6 @@ function DataTableEx() {
 
     const ExpandedComponent = ({data}) => <pre>{JSON.stringify(data, null, 2)}</pre>;
 
-    function exportExcel(){
-        let wb = XLSX.utils.book_new(),ws = XLSX.utils.json_to_sheet(items);
-        XLSX.utils.book_append_sheet(wb,ws,"MyShiit");
-        XLSX.writeFile(wb,"MyExcel.xlsx");
-    }
-
-    function exportArrayExcel(){
-        let wb = XLSX.utils.book_new(),
-            ws = XLSX.utils.aoa_to_sheet(justArray);
-        XLSX.utils.book_append_sheet(wb,ws,"MyArrayShiit");
-        XLSX.writeFile(wb,"MyArrayExcel.xlsx");
-    }
-
     return (
         <div className="example">
             <Input type="text" placeholder="SearchByName" onChange={handleFilter}/>
@@ -189,14 +170,6 @@ function DataTableEx() {
                 direction={Direction.AUTO}
                 subHeaderAlign={Alignment.LEFT}
             />
-            <div>
-                    <Button style={{backgroundColor: "tomato", marginTop: "5px",marginRight:"10px"}}
-                            onClick={exportExcel}>Export Excel</Button>
-
-                    <Button style={{backgroundColor: "orange", marginTop: "5px"}}
-                            onClick={exportArrayExcel}>Export Array Excel</Button>
-
-            </div>
         </div>
     );
 }

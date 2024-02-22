@@ -12,6 +12,7 @@ import UseCallBackExample from "./components/horizontalMenu/UseCallBackExample";
 import VerticalMenu from "./components/VerticalMenu";
 import DataTableEx from "./components/verticalMenu/DataTableEx";
 import Slides from "./components/verticalMenu/Slides";
+import ExcelOperations from "./components/verticalMenu/ExcelOperations";
 
 function App() {
   return (
@@ -31,7 +32,7 @@ function App() {
             {/*VerticalMenu*/}
             <Route path="/dataTableEx"  element={<DataTableEx />}></Route>
             <Route path="/slides"  element={<Slides />}></Route>
-
+            <Route path="/excelOperations"  element={<ExcelOperations />}></Route>
         </Routes>
     </div>
   );

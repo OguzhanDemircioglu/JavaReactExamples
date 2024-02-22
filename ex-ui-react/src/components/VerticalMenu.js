@@ -6,7 +6,7 @@ import {Container} from "@mui/material";
 
 const VerticalMenu = () => {
     return (
-        <div className="side-nav">
+        <div className="verticalMenu">
             <Container>
                 <Nav>
                     <NavLink className="nav-link" style={{color: "darkslategray", fontSize: "20px"}} to={"/dataTableEx"}>
@@ -16,6 +16,11 @@ const VerticalMenu = () => {
                 <Nav>
                     <NavLink className="nav-link" style={{color: "darkslategray", fontSize: "20px"}} to={"/slides"}>
                         Slides
+                    </NavLink>
+                </Nav>
+                <Nav>
+                    <NavLink className="nav-link" style={{color: "darkslategray", fontSize: "20px"}} to={"/excelOperations"}>
+                        ExcelCruds
                     </NavLink>
                 </Nav>
 
