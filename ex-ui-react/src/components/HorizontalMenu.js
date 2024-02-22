@@ -14,7 +14,7 @@ export default function HorizontalMenu() {
                         <FontAwesomeIcon icon={faVideoSlash}/>
                         Dear Vault
                     </Navbar.Brand>
-                    <Nav>
+                    <Nav style={{flex: "max-content" }}>
                         <NavLink className="nav-link" href="/useEffect">
                             UseEffect
                         </NavLink>
