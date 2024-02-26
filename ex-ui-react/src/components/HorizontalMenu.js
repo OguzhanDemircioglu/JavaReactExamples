@@ -12,9 +12,9 @@ export default function HorizontalMenu() {
                 <Container fluid>
                     <Navbar.Brand href="/"
                             style={{color: "gold"
-                                ,marginLeft:"30px",marginRight:"60px"}}>
+                                ,marginLeft:"30px",marginRight:"80px"}}>
                         <FontAwesomeIcon icon={faVideoSlash}/>
-                        Dear Vault
+                        My Vault
                     </Navbar.Brand>
                     <Nav style={{flex: "max-content" }}>
                         <NavLink className="nav-link" href="/useEffect">
