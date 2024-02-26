@@ -12,7 +12,9 @@ import UseCallBackExample from "./components/horizontalMenu/UseCallBackExample";
 import VerticalMenu from "./components/VerticalMenu";
 import DataTableEx from "./components/verticalMenu/DataTableEx";
 import Slides from "./components/verticalMenu/Slides";
-import ExcelCruds from "./components/verticalMenu/ExcelCruds";
+import ExcelCrud from "./components/verticalMenu/ExcelCrud";
+import ImageWidget from "./components/verticalMenu/ImageWidget";
+import UploadImages from "./components/verticalMenu/UploadImages";
 
 function App() {
   return (
@@ -32,7 +34,10 @@ function App() {
             {/*VerticalMenu*/}
             <Route path="/dataTableEx"  element={<DataTableEx />}></Route>
             <Route path="/slides"  element={<Slides />}></Route>
-            <Route path="/excelOperations"  element={<ExcelCruds />}></Route>
+            <Route path="/excelCrud"  element={<ExcelCrud />}></Route>
+            <Route path="/ImageWidget"  element={<ImageWidget />}></Route>
+            <Route path="/uploadImages"  element={<UploadImages />}></Route>
+
         </Routes>
     </div>
   );

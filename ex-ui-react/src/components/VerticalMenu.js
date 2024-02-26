@@ -19,11 +19,20 @@ const VerticalMenu = () => {
                     </NavLink>
                 </Nav>
                 <Nav>
-                    <NavLink className="nav-link" style={{color: "darkslategray", fontSize: "20px"}} to={"/excelOperations"}>
-                        ExcelCruds
+                    <NavLink className="nav-link" style={{color: "darkslategray", fontSize: "20px"}} to={"/excelCrud"}>
+                        ExcelCrud
                     </NavLink>
                 </Nav>
-
+                <Nav>
+                    <NavLink className="nav-link" style={{color: "darkslategray", fontSize: "20px"}} to={"/ImageWidget"}>
+                        ImageWidget
+                    </NavLink>
+                </Nav>
+                <Nav>
+                    <NavLink className="nav-link" style={{color: "darkslategray", fontSize: "20px"}} to={"/uploadImages"}>
+                        UploadImages
+                    </NavLink>
+                </Nav>
             </Container>
         </div>
     );
