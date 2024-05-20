@@ -1,10 +1,11 @@
+import helper.Person;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
 public class StreamExample {
     public static void main(String[] args) {
 
-/*
         List<String> arr = new ArrayList<>();
         arr.add("asasd as");
         arr.add("awd ");
@@ -17,34 +18,32 @@ public class StreamExample {
         System.out.println();
         getTotalNujmberOfArraysBiggerThanFive(arr);
 
-        List<List<Person>> roughArray = new ArrayList<>();
-        List<Person> persons = getPeople();
+        List<List<helper.Person>> roughArray = new ArrayList<>();
+        List<helper.Person> persons = getPeople();
         roughArray.add(persons);
 
         System.out.println();
         getBiggestAgeOfCompany(persons);
 
         List<Integer> intArr = new ArrayList<>();
-        for (int i = 0; i <10 ; i++) {
+        for (int i = 0; i < 10; i++) {
             intArr.add(i);
         }
 
-       System.out.println("\n" + sumTheArray(intArr));
+        System.out.println("\n" + sumTheArray(intArr));
 
-        System.out.println("\n" +getPeoplesAgeBiggerThan18byTheirNames(persons));
+        System.out.println("\n" + getPeoplesAgeBiggerThan18byTheirNames(persons));
 
-        System.out.println("\n" +getPeopleWhichIsOlderThan18ByHashMap(persons));
+        System.out.println("\n" + getPeopleWhichIsOlderThan18ByHashMap(persons));
 
         System.out.println("\n" + getNamesWithCommaFinishWithDot(persons));
 
-        System.out.println("\n" +getOBeforeOddsgetEBeforeEvens(intArr) +"\n");
+        System.out.println("\n" + getOBeforeOddsgetEBeforeEvens(intArr) + "\n");
 
         foreachUsage(persons);
 
-        String reduceID ="update = selfe=000\nselect214";
+        String reduceID = "update = selfe=000\nselect214";
         getReduceId(reduceID);
-*/
-
 
     }
 
@@ -86,13 +85,13 @@ public class StreamExample {
         return arr.stream().map(String::toUpperCase).collect(Collectors.toList());
     }
 
-    public static void getTotalNujmberOfArraysBiggerThanFive(List<String> arr){
+    public static void getTotalNujmberOfArraysBiggerThanFive(List<String> arr) {
         System.out.println(
-                arr.stream().filter(s -> s.length()>5).mapToInt(String::length).count()
+                arr.stream().filter(s -> s.length() > 5).mapToInt(String::length).count()
         );
     }
 
-    public static void getBiggestAgeOfCompany(List<Person> arr){
+    public static void getBiggestAgeOfCompany(List<Person> arr) {
         System.out.println(
                 arr.stream().map(Person::getAge)
                         .max(Comparator.comparing(Integer::intValue))
@@ -115,19 +114,19 @@ public class StreamExample {
         );
     }
 
-    public static int sumTheArray(List<Integer> arr){
+    public static int sumTheArray(List<Integer> arr) {
         return arr.stream().reduce(Integer::sum).orElseThrow(NullPointerException::new);
     }
 
-    public static Set<String> getPeoplesAgeBiggerThan18byTheirNames(List<Person> arr){
+    public static Set<String> getPeoplesAgeBiggerThan18byTheirNames(List<Person> arr) {
         return arr.stream()
-                        .filter(person -> person.getAge()>18).map(Person::getName)
-                            .collect(Collectors.toSet());
+                .filter(person -> person.getAge() > 18).map(Person::getName)
+                .collect(Collectors.toSet());
     }
 
-    public static Map<Boolean, List<Person>> getPeopleWhichIsOlderThan18ByHashMap(List<Person> arr){
+    public static Map<Boolean, List<Person>> getPeopleWhichIsOlderThan18ByHashMap(List<Person> arr) {
 
-        System.out.println("\n"+
+        System.out.println("\n" +
                 arr.stream()
                         .collect(
                                 Collectors.groupingBy(Person::getAge, Collectors.toList()
@@ -140,44 +139,44 @@ public class StreamExample {
                         ));
     }
 
-    public static String getNamesWithCommaFinishWithDot(List<Person> arr){
+    public static String getNamesWithCommaFinishWithDot(List<Person> arr) {
 
         System.out.println("\nNames : " +
-                arr.stream().map(Person::getName).collect(Collectors.joining(","))+ "."
+                arr.stream().map(Person::getName).collect(Collectors.joining(",")) + "."
         );
 
-        return "Names : "+arr.stream()
+        return "Names : " + arr.stream()
                 .map(Person::getName).
-                    reduce((i,sum) -> i + ", " +sum)
-                        .orElse("")+ ".";
+                reduce((i, sum) -> i + ", " + sum)
+                .orElse("") + ".";
     }
 
-    public static String getOBeforeOddsgetEBeforeEvens(List<Integer> arr){
+    public static String getOBeforeOddsgetEBeforeEvens(List<Integer> arr) {
 
         return arr.stream().map(i -> {
             String s = "";
-            if(i%2==0){
-                s= "e" +i;
-            }else {
+            if (i % 2 == 0) {
+                s = "e" + i;
+            } else {
                 s = "o" + i;
             }
             return s;
         }).collect(Collectors.joining(","));
     }
 
-    public static void foreachUsage(List<Person> arr){
+    public static void foreachUsage(List<Person> arr) {
         arr.stream().map(Person::getName).collect(Collectors.toSet()).forEach(System.out::println);
     }
 
-    public static void getReduceId(String reduceID){
+    public static void getReduceId(String reduceID) {
         System.out.println(
                 Arrays.stream(reduceID.split("=")).map(i -> {
-                    String returnVal ="";
-                    if(i.contains("select")){
-                        returnVal=i.substring(0,i.indexOf("select")-1);
+                    String returnVal = "";
+                    if (i.contains("select")) {
+                        returnVal = i.substring(0, i.indexOf("select") - 1);
                     }
                     return returnVal;
-                }).filter(i->!i.equals("")).findFirst().get()
+                }).filter(i -> !i.equals("")).findFirst().get()
         );
     }
 }

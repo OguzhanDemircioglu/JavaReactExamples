@@ -1,4 +1,5 @@
 import helper.Circle;
+import helper.Person;
 import helper.Rectang;
 import helper.Shape;
 

@@ -9,14 +9,11 @@ public class AddDaysToDate {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Calendar calendar = Calendar.getInstance();
 
-        // Başlangıç tarihini ayarla
         Date date = sdf.parse(startDate);
         calendar.setTime(date);
 
-        // Belirtilen gün kadar gün ekleyerek yeni tarihi hesapla
         calendar.add(Calendar.DAY_OF_MONTH, daysToAdd);
 
-        // Yeni tarihi "yyyy-MM-dd" formatında string olarak döndür
         return sdf.format(calendar.getTime());
     }
 

@@ -1,14 +1,8 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class MovingTotal {
-    /**
-     * Adds/appends list of integers at the end of internal list.
-     */
     List<Integer> sumList = new ArrayList<>();
     List<Integer> valList = new ArrayList<>();
 

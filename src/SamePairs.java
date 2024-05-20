@@ -7,7 +7,6 @@ import java.util.stream.Collectors;
 public class SamePairs {
     public static void main(String[] args) {
 
-        //Aynı çarlardan oluşan Stringlerden kaç tane var
         List<String> arr = new ArrayList<>();
         arr.add("uz");
         arr.add("foo");
