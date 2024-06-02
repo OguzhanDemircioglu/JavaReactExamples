@@ -1,15 +1,15 @@
-import javazoom.jl.decoder.JavaLayerException;
+/*import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.Player;
-import javax.media.*;
+import javax.media.*;*/
 
 import java.io.*;
 
 public class Mp3ReadWrite {
     public static void main(String[] args) throws IOException {
 
-        FileInputStream fileInputStream = new FileInputStream(".//src//helper//Amorf - Waaraf.mp3");
+        /*FileInputStream fileInputStream = new FileInputStream(".//src//helper//Amorf - Waaraf.mp3");
         Player player = new Player(fileInputStream);
-        player.play();
+        player.play();*/
 
         FileInputStream in = new FileInputStream(".//src//helper//Amorf - Waaraf.mp3");
         FileOutputStream out = new FileOutputStream(".//src//helper//1.mp3");
