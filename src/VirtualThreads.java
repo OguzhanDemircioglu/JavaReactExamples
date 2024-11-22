@@ -1,14 +1,17 @@
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.WebSocket;
+import java.net.http.WebSocket.Listener;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 public class VirtualThreads {
     public static void main(String[] args) throws InterruptedException {
-        long startTime = System.nanoTime();
-        goVirtualThreadsIterator();
-        long endTime = System.nanoTime();
-        System.out.println("Metod çalışma süresi: " + (endTime - startTime) / 1_000_000 + " ms");
+
+        startMultiWebSocket();
     }
 
 
@@ -126,4 +129,77 @@ public class VirtualThreads {
         }
     }
 
+
+    // Basit bir WebSocket Listener
+    static class SimpleWebSocketListener implements WebSocket.Listener {
+        @Override
+        public void onOpen(WebSocket webSocket) {
+            System.out.println("WebSocket bağlantısı açıldı.");
+            WebSocket.Listener.super.onOpen(webSocket);
+        }
+
+        @Override
+        public CompletableFuture<?> onText(WebSocket webSocket, CharSequence data, boolean last) {
+            System.out.println("Sunucudan gelen mesaj: " + data);
+            return (CompletableFuture<?>) Listener.super.onText(webSocket, data, last);
+        }
+
+        @Override
+        public void onError(WebSocket webSocket, Throwable error) {
+            System.err.println("Hata: " + error.getMessage());
+        }
+
+        @Override
+        public CompletableFuture<?> onClose(WebSocket webSocket, int statusCode, String reason) {
+            System.out.println("WebSocket bağlantısı kapatıldı. Durum: " + statusCode + ", Sebep: " + reason);
+            return (CompletableFuture<?>) Listener.super.onClose(webSocket, statusCode, reason);
+        }
+    }
+
+    static void startWebSocket(){
+        try (var executor = Executors.newVirtualThreadPerTaskExecutor()) {
+            // WebSocket URI'sini belirtiyoruz
+            URI uri = URI.create("wss://echo.websocket.events"); // Test sunucusu
+
+            // HttpClient oluştur
+            HttpClient client = HttpClient.newBuilder()
+                    .executor(executor) // Virtual Thread Executor kullan
+                    .build();
+
+            // WebSocket istemcisini başlat
+            WebSocket webSocket = client.newWebSocketBuilder()
+                    .buildAsync(uri, new SimpleWebSocketListener())
+                    .join(); // Async işlemi bekle
+
+            // Mesaj gönder
+            webSocket.sendText("Merhaba Virtual Threads!", true);
+
+            // WebSocket açık kalırken beklemek için
+            Thread.sleep(5000); // Sunucudan yanıt alabilmek için bekliyoruz
+
+            // WebSocket bağlantısını kapat
+            webSocket.sendClose(WebSocket.NORMAL_CLOSURE, "Bye!").join();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    static void startMultiWebSocket(){
+        try (var executor = Executors.newVirtualThreadPerTaskExecutor()) {
+            for (int i = 0; i < 1000; i++) {
+                int id = i;
+                executor.submit(() -> {
+                    URI uri = URI.create("wss://echo.websocket.events");
+                    HttpClient client = HttpClient.newBuilder().executor(executor).build();
+                    WebSocket webSocket = client.newWebSocketBuilder()
+                            .buildAsync(uri, new SimpleWebSocketListener())
+                            .join();
+                    webSocket.sendText("Mesaj " + id, true);
+                    webSocket.sendClose(WebSocket.NORMAL_CLOSURE, "Bye!").join();
+                });
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
