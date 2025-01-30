@@ -26,7 +26,6 @@ function UploadImages() {
 
         let validFiles = Array.from(files).filter(file => {
             if (!file.name.toLowerCase().endsWith('.gif') &&
-                !file.name.toLowerCase().endsWith('.xlsx') &&
                 !file.name.toLowerCase().endsWith('.jpeg') &&
                 !file.name.toLowerCase().endsWith('.jpg') &&
                 !file.name.toLowerCase().endsWith('.png')) {
@@ -66,7 +65,12 @@ function UploadImages() {
     return (
         <div className="example">
             <form onSubmit={uploadImages}>
-                    <input type="file" multiple={true} onChange={(e) => setFiles(e.target.files)}/>
+                    <input
+                        type="file"
+                        accept="image/gif, image/jpeg, image/png, image/jpg"
+                        multiple={true}
+                        onChange={(e) => setFiles(e.target.files)}
+                    />
                     <button type="submit">Upload</button>
             </form>
             {loading && <ThreeDots
